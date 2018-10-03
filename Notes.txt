@@ -1,0 +1,1 @@
+For enabling login for another account: git config --local credential.helper ""
