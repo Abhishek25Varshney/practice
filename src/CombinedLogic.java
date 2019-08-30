@@ -39,12 +39,17 @@ public class CombinedLogic {
 			}
 
 		}
+		List<Integer> toBeRemoved=new ArrayList<>();
 		for (Map.Entry<Integer, String> entry : mapOfCombinedCourses.entrySet()) {
 			if (entry.getValue().equals("40|50")||entry.getValue().equals("50|40")||entry.getValue().equals("20|50")||entry.getValue().equals("20|50")) {
-				mapOfCombinedCourses.remove(entry.getKey());
+				toBeRemoved.add(entry.getKey());
 				System.out.println("Combo store " + entry.getValue());
 			}
 			System.out.println("Combo store " + entry.getValue());
+		}
+		
+		for (Integer integer : toBeRemoved) {
+			mapOfCombinedCourses.remove(integer);
 		}
 		for (Map.Entry<Integer, String> entry : mapOfCombinedCourses.entrySet()) {
 			System.out.println(entry.getValue());

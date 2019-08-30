@@ -15,6 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -142,11 +143,11 @@ public class NowJava8 {
         		System.out.println(dateBefore);
         		
         		String s4="79|89|99,149";
-            	String[] word3=s4.split(",");
-            	System.out.println(s4.split(",")[0]);
+            	String[] word3=s4.split("\\|");
+            	System.out.println(word3);
             	System.out.println(s4.split(",")[1]);
             	for(String w:word3){
-            	System.out.println(w);
+            	System.out.println("====="+w);
             	}
             	
             	Calendar cal1=Calendar.getInstance();
@@ -157,6 +158,13 @@ public class NowJava8 {
             	String asdlajsd="as sad";
             	URLEncoder.encode(asdlajsd, "UTF-8");
             	System.out.println(asdlajsd.replaceAll(" ", "+"));
+            	
+            	int millis = 0*60;
+            	TimeZone tz = TimeZone.getTimeZone("UTC");
+                SimpleDateFormat df = new SimpleDateFormat("mm:ss");
+                df.setTimeZone(tz);
+                String time = df.format(new Date(millis));
+                System.out.println(time);
     
     }
  
